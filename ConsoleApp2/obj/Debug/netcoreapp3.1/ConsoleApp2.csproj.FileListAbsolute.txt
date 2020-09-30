@@ -1,0 +1,13 @@
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.exe
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.deps.json
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.runtimeconfig.json
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.runtimeconfig.dev.json
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.dll
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\bin\Debug\netcoreapp3.1\ConsoleApp2.pdb
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.csprojAssemblyReference.cache
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.AssemblyInfoInputs.cache
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.AssemblyInfo.cs
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.csproj.CoreCompileInputs.cache
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.dll
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.pdb
+G:\ArcEngineAPI\MongoDB\ConsoleApp2\obj\Debug\netcoreapp3.1\ConsoleApp2.genruntimeconfig.cache
