@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[3.1.7, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.7.1, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.10.4, )"
@@ -57,6 +61,14 @@
             "MongoDB.Driver.GridFS": {
               "target": "Package",
               "version": "[2.10.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [

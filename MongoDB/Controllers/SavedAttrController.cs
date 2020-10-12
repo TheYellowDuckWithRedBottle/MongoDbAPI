@@ -10,6 +10,7 @@ namespace MongoDB.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class SavedAttrController : Controller
     {
         private readonly SavedBuildingAttService _savedBuildingAttService;

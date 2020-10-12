@@ -2,15 +2,19 @@ using BooksApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using MongoDB.Extension;
 using MongoDB.Services;
+using MongoDB.SwaggerFile;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace MongoDB
 {
@@ -31,6 +35,24 @@ namespace MongoDB
             //   // options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
 
             //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "测试接口文档",
+                    Description = "测试接口"
+                });
+                // 为 Swagger 设置xml文档注释路径
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+                c.DocInclusionPredicate((docName, description) => true);
+                //添加对控制器的标签(描述)
+                c.DocumentFilter<ApplyTagDescriptions>();//显示类名
+                c.CustomSchemaIds(type => type.FullName);// 可以解决相同类名会报错的问题
+                //c.OperationFilter<AuthTokenHeaderParameter>();
+            });
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(factory =>
             {
@@ -80,6 +102,17 @@ namespace MongoDB
                 };
             });
             app.UseRouting();
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
+            });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web App v1");
+                c.RoutePrefix = "doc";//设置根节点访问
+                //c.DocExpansion(DocExpansion.None);//折叠
+                c.DefaultModelsExpandDepth(-1);//不显示Schemas
+            });
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
             //app.UseStatusCodePages();

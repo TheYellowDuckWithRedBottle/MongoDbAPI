@@ -4,7 +4,6 @@ G:\ArcEngineAPI\MongoDB\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimec
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
-G:\ArcEngineAPI\MongoDB\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
 G:\ArcEngineAPI\MongoDB\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache

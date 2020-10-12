@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MongoDB</name>
+    </assembly>
+    <members>
+        <member name="M:MongoDB.Common.ClassHelper.CreateInstance(System.Collections.Generic.List{MongoDB.Common.ClassHelper.CustPropertyInfo})">
+            返回创建的类的实例。
+        </member>
+        <member name="M:MongoDB.Common.ClassHelper.AddProperty(System.Type,System.Collections.Generic.List{MongoDB.Common.ClassHelper.CustPropertyInfo})">
+            
+            创建一个没有成员的类型的实例，类名为"DefaultClass"。
+            
+            返回创建的类型的实例。
+            
+            根据类名创建一个没有成员的类型的实例。
+            
+            将要创建的类型的实例的类名。
+            返回创建的类型的实例。
+        </member>
+        <member name="M:MongoDB.Common.ClassHelper.CustPropertyInfo.#ctor">
+            
+            空构造。
+            
+        </member>
+        <member name="M:MongoDB.Common.ClassHelper.CustPropertyInfo.#ctor(System.String,System.String)">
+            
+            根据属性类型名称，属性名称构造实例。
+            
+            属性类型名称。
+            属性名称。
+        </member>
+        <member name="P:MongoDB.Common.ClassHelper.CustPropertyInfo.Type">
+            
+            获取或设置属性类型名称。
+            
+        </member>
+        <member name="P:MongoDB.Common.ClassHelper.CustPropertyInfo.PropertyName">
+            
+            获取或设置属性名称。
+            
+        </member>
+        <member name="P:MongoDB.Common.ClassHelper.CustPropertyInfo.FieldName">
+            
+            获取属性字段名称。
+            
+        </member>
+        <member name="P:MongoDB.Common.ClassHelper.CustPropertyInfo.SetPropertyMethodName">
+            
+            获取属性在IL中的Set方法名。
+            
+        </member>
+        <member name="P:MongoDB.Common.ClassHelper.CustPropertyInfo.GetPropertyMethodName">
+            
+             获取属性在IL中的Get方法名。
+            
+        </member>
+        <member name="M:MongoDB.Controllers.LoginController.ValiToken(System.String)">
+            <summary>
+            验证Token
+            </summary>
+            <param name="tokenStr">token</param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LoginController.ValiTokenState(System.String)">
+            <summary>
+            验证Token 带返回状态
+            </summary>
+            <param name="tokenStr"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MongoDB.Dto.UserDto.LoginID">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MongoDB.Dto.UserDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="M:MongoDB.JWT.ITokenHelper.ValiToken(System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean})">
+            <summary>
+            Token验证
+            </summary>
+            <param name="encodeJwt">token</param>
+            <param name="validatePayLoad">自定义各类验证； 是否包含那种申明，或者申明的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.JWT.ITokenHelper.ValiTokenState(System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean},System.Action{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            带返回状态的Token验证
+            </summary>
+            <param name="encodeJwt">token</param>
+            <param name="validatePayLoad">自定义各类验证； 是否包含那种申明，或者申明的值</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.JWT.TokenHelper.ValiToken(System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean})">
+            <summary>
+            验证身份 验证签名的有效性
+            </summary>
+            <param name="encodeJwt"></param>
+            <param name="validatePayLoad">自定义各类验证； 是否包含那种申明，或者申明的值， </param>
+        </member>
+        <member name="M:MongoDB.JWT.TokenHelper.ToUnixEpochDate(System.DateTime)">
+            <summary>
+            时间转换
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.JWT.TokenHelper.ValiTokenState(System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.String},System.Boolean},System.Action{System.Collections.Generic.Dictionary{System.String,System.String}})">
+            <summary>
+            
+            </summary>
+            <param name="encodeJwt"></param>
+            <param name="validatePayLoad"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MongoDB.Resource.ReturnModel.Msg">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:MongoDB.Resource.ReturnModel.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:MongoDB.Resource.ReturnModel.TnToken">
+            <summary>
+            Token信息
+            </summary>
+        </member>
+    </members>
+</doc>
