@@ -21,13 +21,18 @@ namespace MongoDB.Controllers
         {
             _savedBuildingAttService = savedBuildingAttService;
         }
-        [HttpGet(Name = "GetAttribute")]
+        /// <summary>
+        /// 获取所有的属性信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet(Name = "GetAttributes")]
         public ActionResult<Attributes> Get()
         {
             var attribute = _savedBuildingAttService.Get();
         
             return Ok(attribute);
         }
+        [HttpHead(Name = "GetAttribute")]
         public List<Attributes> GetAttribute()
         {
             List<Attributes> attributes = new List<Attributes>();

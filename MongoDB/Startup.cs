@@ -1,4 +1,5 @@
 using BooksApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Extension;
+using MongoDB.Filter;
+using MongoDB.JWT;
 using MongoDB.Services;
 using MongoDB.SwaggerFile;
 using System;
@@ -53,6 +56,17 @@ namespace MongoDB
                 c.CustomSchemaIds(type => type.FullName);// 可以解决相同类名会报错的问题
                 //c.OperationFilter<AuthTokenHeaderParameter>();
             });
+            services.AddTransient<ITokenHelper, TokenHelper>();
+            //读取配置文件配置的jwt相关配置
+            services.Configure<JWTConfig>(Configuration.GetSection("JWTConfig"));
+            //启用JWT
+            services.AddAuthentication(Options =>
+            {
+                Options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                Options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer();
+            //注册自定义的token标签
+           services.AddScoped<TokenFilter>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(factory =>
             {

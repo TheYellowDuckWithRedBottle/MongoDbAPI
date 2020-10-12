@@ -69,6 +69,12 @@
             <param name="tokenStr"></param>
             <returns></returns>
         </member>
+        <member name="M:MongoDB.Controllers.SavedAttrController.Get">
+            <summary>
+            获取所有的属性信息
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:MongoDB.Dto.UserDto.LoginID">
             <summary>
             用户名

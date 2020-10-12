@@ -31,10 +31,10 @@ namespace MongoDB.Controllers
             }
             return Ok(tile);
         }
-        public async Task<Tile> Create(Tile tile)
-        {
-            return await _tileService.Create(tile);
-        }
+        //public async Task<Tile> Create(Tile tile)
+        //{
+        //    return await _tileService.Create(tile);
+        //}
        
     }
 }
