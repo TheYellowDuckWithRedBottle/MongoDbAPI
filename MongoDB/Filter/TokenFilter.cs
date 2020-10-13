@@ -27,7 +27,7 @@ namespace MongoDB.Filter
             //获取token
             //object tokenobj = context.ActionArguments["token"];
             //前端地址栏参数传参
-            object tokenobj = context.HttpContext.Request.Headers["token"].ToString();//前端写在header里面获取的
+            object tokenobj = context.HttpContext.Request.Headers["Authorization"].ToString();//前端写在header里面获取的
             if (tokenobj == null)
             {
                 ret.Code = 201;
