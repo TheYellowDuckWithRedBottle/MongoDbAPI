@@ -15,6 +15,7 @@ using MongoDB.Filter;
 using MongoDB.JWT;
 using MongoDB.Services;
 using MongoDB.SwaggerFile;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.IO;
 using System.Reflection;
@@ -123,8 +124,8 @@ namespace MongoDB
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web App v1");
-                c.RoutePrefix = "doc";//设置根节点访问
-                //c.DocExpansion(DocExpansion.None);//折叠
+                c.RoutePrefix = string.Empty;//设置根节点访问
+                c.DocExpansion(DocExpansion.None);//折叠
                 c.DefaultModelsExpandDepth(-1);//不显示Schemas
             });
             app.UseCors(MyAllowSpecificOrigins);
