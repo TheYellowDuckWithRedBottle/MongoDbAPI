@@ -20,7 +20,7 @@
     "MongoDB": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/EstateSta?HouseHoldID=1-01",
+      "launchUrl": "index.html",
       "applicationUrl": "http://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

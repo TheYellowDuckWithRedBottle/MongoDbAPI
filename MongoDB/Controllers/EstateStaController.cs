@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Common;
 using MongoDB.Extension;
+using MongoDB.Filter;
 using MongoDB.Models;
 using MongoDB.Resource;
 using MongoDB.Services;
@@ -13,6 +14,7 @@ using System.Linq;
 
 namespace MongoDB.Controllers
 {
+    [ServiceFilter(typeof(TokenFilter))]
     [Route("api/[controller]")]
     [ApiController]
     public class EstateStaController:ControllerBase

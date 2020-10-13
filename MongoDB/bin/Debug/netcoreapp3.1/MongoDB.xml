@@ -75,12 +75,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:MongoDB.Dto.UserDto.LoginID">
+        <member name="P:MongoDB.Dto.UserDto.username">
             <summary>
             用户名
             </summary>
         </member>
-        <member name="P:MongoDB.Dto.UserDto.Password">
+        <member name="P:MongoDB.Dto.UserDto.password">
             <summary>
             密码
             </summary>

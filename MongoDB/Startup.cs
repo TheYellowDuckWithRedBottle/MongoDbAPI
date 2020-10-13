@@ -41,9 +41,9 @@ namespace MongoDB
             //});
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                c.SwaggerDoc("v1.1", new OpenApiInfo
                 {
-                    Version = "v1",
+                    Version = "v1.1",
                     Title = "测试接口文档",
                     Description = "测试接口"
                 });
@@ -81,6 +81,7 @@ namespace MongoDB
             });
             services.Configure<PngstoreDatabaseSettings>(Configuration.GetSection(nameof(PngstoreDatabaseSettings)));
             services.AddSingleton<IPngstoreDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PngstoreDatabaseSettings>>().Value);
+            services.AddSingleton<UserService>();
             services.AddSingleton<TileService>();
             services.AddSingleton<SavedBuildingAttService>();
             services.AddSingleton<B3dmService>();
@@ -123,7 +124,7 @@ namespace MongoDB
             });
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web App v1");
+                c.SwaggerEndpoint("/swagger/v1.1/swagger.json", "Web App v1.1");
                 c.RoutePrefix = string.Empty;//设置根节点访问
                 c.DocExpansion(DocExpansion.None);//折叠
                 c.DefaultModelsExpandDepth(-1);//不显示Schemas

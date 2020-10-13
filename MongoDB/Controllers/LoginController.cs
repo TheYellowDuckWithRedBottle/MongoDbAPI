@@ -2,6 +2,7 @@
 using MongoDB.Dto;
 using MongoDB.JWT;
 using MongoDB.Resource;
+using MongoDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,21 +23,25 @@ namespace MongoDB.Controllers
         [HttpPost]
         public ReturnModel Login([FromBody] UserDto user)
         {
+            UserService userService = new UserService();
+            UserController userController = new UserController(userService);
+           
             var ret = new ReturnModel();
+            
             try
             {
-                if (string.IsNullOrWhiteSpace(user.LoginID) || string.IsNullOrWhiteSpace(user.Password))
+                if (string.IsNullOrWhiteSpace(user.username) || string.IsNullOrWhiteSpace(user.password))
                 {
                     ret.Code = 201;
                     ret.Msg = "用户名密码不能为空";
                     return ret;
                 }
-                //登录操作 我就没写了 || 假设登录成功
-                if (1 == 1)
+               var result= userController.GetUser(user.username, user.password);
+                if (result)
                 {
                     Dictionary<string, string> keyValuePairs = new Dictionary<string, string>
                     {
-                        { "loginID", user.LoginID }
+                        { "loginID", user.username }
                     };
                     ret.Code = 200;
                     ret.Msg = "登录成功";

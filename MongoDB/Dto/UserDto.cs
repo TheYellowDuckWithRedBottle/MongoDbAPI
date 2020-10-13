@@ -10,10 +10,10 @@ namespace MongoDB.Dto
         /// <summary>
         /// 用户名
         /// </summary>
-        public string LoginID { get; set; }
+        public string username { get; set; }
         /// <summary>
         /// 密码
         /// </summary>
-        public string Password { get; set; }
+        public string password { get; set; }
     }
 }
