@@ -92,7 +92,7 @@ namespace MongoDB
                 {
                     builder.AllowAnyHeader()
                     .AllowAnyOrigin()
-                    .WithExposedHeaders("X - Pagination")
+                    .WithExposedHeaders("X-Pagination")
                     .AllowAnyOrigin()
                     
                     .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS");

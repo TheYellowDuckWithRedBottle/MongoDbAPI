@@ -8,7 +8,7 @@ namespace MongoDB.Extension
 {
     public class PaginationBase
     {
-        private int _pageSize = 10;
+        private int _pageSize = 5;
         public int PageIndex { get; set; } = 0;
         private int MaxPageSize { get; set; }=20;
 

@@ -78,6 +78,7 @@ namespace MongoDB.Controllers
                 PreviousPageLink = preLink,
                 NextPageLink = nextLink
             };
+           
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(mate));
 
             return Ok(listDic);
