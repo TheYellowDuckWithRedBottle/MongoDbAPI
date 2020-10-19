@@ -67,7 +67,7 @@ namespace MongoDB
                 Options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer();
             //注册自定义的token标签
-           services.AddScoped<TokenFilter>();
+            services.AddScoped<TokenFilter>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(factory =>
             {
@@ -86,6 +86,8 @@ namespace MongoDB
             services.AddSingleton<SavedBuildingAttService>();
             services.AddSingleton<B3dmService>();
             services.AddSingleton<EstateStaService>();
+            services.AddSingleton<RealEstateService>();
+            services.AddAutoMapper();
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins, builder =>
@@ -99,7 +101,7 @@ namespace MongoDB
                 });
             });
             services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
-            services.AddAutoMapper();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -110,7 +112,7 @@ namespace MongoDB
                 app.UseDeveloperExceptionPage();
             }
            
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.Use(next => {
                 return async httpContext =>
                 {
@@ -131,7 +133,6 @@ namespace MongoDB
             });
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
-            //app.UseStatusCodePages();
             app.UseMvc();
         }
     }

@@ -14,8 +14,8 @@ using System.Linq;
 
 namespace MongoDB.Controllers
 {
-    [ServiceFilter(typeof(TokenFilter))]
-    [Route("api/[controller]")]
+   // [ServiceFilter(typeof(TokenFilter))]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class EstateStaController:ControllerBase
     {
@@ -30,7 +30,7 @@ namespace MongoDB.Controllers
         }
         [HttpGet(Name ="GetBuildings")]
         [EnableCors("_myAllowSpecificOrigins")]
-        public ActionResult Get([FromQuery] QueryParameter parameter)
+        public ActionResult GetBuildings([FromQuery] QueryParameter parameter)
         {
 
             SavedBuildingAttService savedBuildingAttService = new SavedBuildingAttService();
@@ -83,8 +83,8 @@ namespace MongoDB.Controllers
 
             return Ok(listDic);
         }
-        [HttpGet("{HouseholdID}", Name ="GetBuilding")]  
-        public ActionResult<Building> Get([FromQuery]string HouseholdID)
+        [HttpGet(Name ="GetBuilding")]  
+        public ActionResult<Building> GetBuilding([FromQuery]string HouseholdID)
         {
             if(HouseholdID == null)
             {

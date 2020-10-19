@@ -140,5 +140,18 @@
             Token信息
             </summary>
         </member>
+        <member name="M:MongoDB.Services.RealEstateService.GetAll">
+            <summary>
+            查找所有的不动产
+            </summary>
+            <returns>不动产列表</returns>
+        </member>
+        <member name="M:MongoDB.Services.RealEstateService.GetOneRealEstate(MongoDB.Models.QueryParameter)">
+            <summary>
+            根据查询参数获取某个建筑物
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

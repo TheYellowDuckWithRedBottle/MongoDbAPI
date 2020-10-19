@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ipB9GlgI864W6tJy3iVRTWkD0dTFFRFbfx9mtt31qpKQt5Mu9OcIA+rBk0XQeZgR4HEVnbMJPm1sbaYRn5BxgA==",
+  "success": true,
+  "projectFilePath": "G:\\ArcEngineAPI\\MongoDB\\TestAPI3.1\\TestAPI3.1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

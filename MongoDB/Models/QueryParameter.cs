@@ -10,5 +10,7 @@ namespace MongoDB.Models
     {
        public string EstateUnitNo;
        public string HouseHoldeID;
+        public string NatbuildNo;
+        public string RoomId;
     }
 }

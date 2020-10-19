@@ -29,7 +29,6 @@ G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\staticwebassets\MongoDB.
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.pdb
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.genruntimeconfig.cache
-G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csprojAssemblyReference.cache
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -75,3 +74,4 @@ G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\Microsoft.
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csproj.CoreCompileInputs.cache
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.MvcApplicationPartsAssemblyInfo.cs
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.MvcApplicationPartsAssemblyInfo.cache
+G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csprojAssemblyReference.cache

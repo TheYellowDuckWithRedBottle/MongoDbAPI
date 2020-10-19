@@ -36,7 +36,7 @@ namespace MongoDB.Controllers
                     ret.Msg = "用户名密码不能为空";
                     return ret;
                 }
-               var result= userController.GetUser(user.username, user.password);
+               var result= userController.ValidateUser(user.username, user.password);
                 if (result)
                 {
                     Dictionary<string, string> keyValuePairs = new Dictionary<string, string>

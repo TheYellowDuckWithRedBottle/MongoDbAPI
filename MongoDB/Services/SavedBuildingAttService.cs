@@ -18,7 +18,7 @@ namespace MongoDB.Services
             var database = client.GetDatabase("png");
             _Attribute = database.GetCollection<Attributes>("Attributes");
         }
-        //https://github.com/TheYellowDuckWithRedBottle/MongoDbAPI.git
+       
         public List<Attributes> Get() => _Attribute.Find(attribute => true).ToList();
         public Attributes Get(string name)
         {
@@ -33,12 +33,13 @@ namespace MongoDB.Services
         {
             try
             {
+          
                 FilterDefinition<Attributes> filter = Builders<Attributes>.Filter.Eq("name", name);
+
                 var list = new List<UpdateDefinition<Attributes>>();
                 var properties = typeof(Attributes).GetProperties();
                 foreach (var item in properties)
                 {
-                    //if (item.Name.ToLower() == "name") continue;
                     var value = item.GetValue(attributes);
                     list.Add(Builders<Attributes>.Update.Set(item.Name, value));
                 }

@@ -19,7 +19,7 @@ namespace MongoDB.Controllers
         }
 
         [HttpPost]
-        public bool GetUser([FromForm] string userName,[FromForm]string password)
+        public bool ValidateUser([FromForm] string userName,[FromForm]string password)
         {
            var user= _userService.GetUser(userName);
             if(user==null)
