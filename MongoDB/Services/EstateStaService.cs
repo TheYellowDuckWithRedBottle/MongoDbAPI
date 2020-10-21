@@ -77,6 +77,10 @@ namespace MongoDB.Services
             _Building.InsertOne(building);
             return building;
         }
+        public void CreateMany(IEnumerable<Building> buildings)
+        {
+            _Building.InsertMany(buildings);  
+        }
         public void Update(string EstateUnitNo, Building building) =>
             _Building.ReplaceOne(building => building.EstateUnitNo == EstateUnitNo, building);
         public void Remove(Building building) =>

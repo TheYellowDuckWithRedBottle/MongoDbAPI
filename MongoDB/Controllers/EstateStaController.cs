@@ -39,6 +39,7 @@ namespace MongoDB.Controllers
        
             List<Dictionary<string,string>> listDic = new List<Dictionary<string, string>>();
             List<Attributes> listAtt = new List<Attributes>();
+           
             var buildings = _estateStaService.GetBuildings(parameter);
             foreach (var item in buildings)
             {

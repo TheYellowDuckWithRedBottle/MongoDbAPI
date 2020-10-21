@@ -46,7 +46,7 @@ namespace MongoDB.Controllers
                 }
                 else
                 {
-                    RoomId = RoomIdArray[1];
+                    RoomId = RoomIdArray[RoomIdArray.Length-1];
                 }
             }
            

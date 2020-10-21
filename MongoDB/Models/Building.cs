@@ -28,13 +28,13 @@ namespace MongoDB.Models
         [JsonProperty("逻辑幢号")]
         public string LogicBuildNo { get; set; }
         [JsonProperty("户号")]
-        public int CoverId { get; set; }
+        public string CoverId { get; set; }
         [JsonProperty("单元号")]
-        public int UnitId { get; set; }
+        public string UnitId { get; set; }
         [JsonProperty("实际层号")]
-        public double FloLayerId { get; set; }
+        public string FloLayerId { get; set; }
         [JsonProperty("名义层号")]
-        public double NameId { get; set; }
+        public string NameId { get; set; }
         [JsonProperty("房间号")]
         public string RoomId { get; set;}
         [JsonProperty("单元名称")]
