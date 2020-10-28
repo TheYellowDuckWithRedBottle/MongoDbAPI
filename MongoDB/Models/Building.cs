@@ -29,8 +29,9 @@ namespace MongoDB.Models
         public string LogicBuildNo { get; set; }
         [JsonProperty("户号")]
         public string CoverId { get; set; }
+
         [JsonProperty("单元号")]
-        public string UnitId { get; set; }
+        public double UnitId { get; set; }
         [JsonProperty("实际层号")]
         public string FloLayerId { get; set; }
         [JsonProperty("名义层号")]

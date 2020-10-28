@@ -15,7 +15,7 @@ namespace MongoDB.Services
         {
 
             var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("png");
+            var database = client.GetDatabase("SuQianDB");
             _User = database.GetCollection<User>("user");
         }
 

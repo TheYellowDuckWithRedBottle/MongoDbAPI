@@ -15,7 +15,7 @@ namespace MongoDB.Services
         public SavedBuildingAttService()
         {
             var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("png");
+            var database = client.GetDatabase("SuQianDB");
             _Attribute = database.GetCollection<Attributes>("Attributes");
         }
        

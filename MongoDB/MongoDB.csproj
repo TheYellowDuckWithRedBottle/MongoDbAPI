@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.Cells" Version="20.10.0" />
     <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
@@ -28,12 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Repositroy\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Aspose.Cells">
-      <HintPath>F:\ChromeDownLoad\Aspose.Cells-License\Aspose.Cells.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

@@ -76,11 +76,23 @@ namespace MongoDB.Services
             return _Building.Find<Building>(building => building.HouseHoldeID == HouseholdID || building.EstateUnitNo == HouseholdID).FirstOrDefault();
         }
 
-
+        /// <summary>
+        /// 新建一个建筑物
+        /// </summary>
+        /// <param name="building"></param>
+        /// <returns></returns>
         public Building Create(Building building)
         {
             _Building.InsertOne(building);
             return building;
+        }
+        /// <summary>
+        ///上传多个信息
+        /// </summary>
+        /// <param name="buildings"></param>
+        public void CreateMany(IEnumerable<Building> buildings)
+        {
+            _Building.InsertMany(buildings);
         }
         public void Update(string EstateUnitNo, Building building) =>
             _Building.ReplaceOne(building => building.EstateUnitNo == EstateUnitNo, building);

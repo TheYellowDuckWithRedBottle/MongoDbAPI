@@ -69,10 +69,41 @@
             <param name="tokenStr"></param>
             <returns></returns>
         </member>
+        <member name="M:MongoDB.Controllers.RealEstateController.GetRealEstateByHouseId(System.String)">
+            <summary>
+            获取不动产信息
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.RealEstateController.GetRealEstate(System.String,System.String)">
+            <summary>
+            根据幢号和房间号查询不动产属性
+            </summary>
+            <param name="NatbuildNo">幢号</param>
+            <param name="RoomId">栋号</param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.RealEstateController.GetBuildings(MongoDB.Models.QueryParameter)">
+            <summary>
+            获取保留属性的不动产信息
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
         <member name="M:MongoDB.Controllers.SavedAttrController.Get">
             <summary>
             获取所有的属性信息
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.TileController.Get(System.String,System.String,System.String)">
+            <summary>
+            获取影像
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
             <returns></returns>
         </member>
         <member name="P:MongoDB.Dto.UserDto.username">
@@ -152,6 +183,19 @@
             </summary>
             <param name="query"></param>
             <returns></returns>
+        </member>
+        <member name="M:MongoDB.Services.RealEstateService.Create(MongoDB.Models.Building)">
+            <summary>
+            新建一个建筑物
+            </summary>
+            <param name="building"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Services.RealEstateService.CreateMany(System.Collections.Generic.IEnumerable{MongoDB.Models.Building})">
+             <summary>
+            上传多个信息
+             </summary>
+             <param name="buildings"></param>
         </member>
     </members>
 </doc>
