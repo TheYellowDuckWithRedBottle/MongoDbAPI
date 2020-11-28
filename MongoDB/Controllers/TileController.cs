@@ -11,7 +11,7 @@ using System;
 
 namespace MongoDB.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TileController:ControllerBase
     {
@@ -34,15 +34,31 @@ namespace MongoDB.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("{x}/{y}/{z}")]
-        public async Task<ActionResult<Tile>> Get(string x, string y, string z)
+        public IActionResult Get(string x, string y, string z)
         {
-            var tile=await _tileService.Get(x, y, z);
-            if(tile==null)
+            var tile = _tileService.Get(x, y, z);
+            if (tile == null)
             {
                 return NotFound();
             }
-            return Ok(tile);
+            return tile;
         }
+        /// <summary>
+        /// 异步获得二进制
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        /// <returns></returns>
+        //public async Task<IActionResult> GetOne(string x, string y, string z)
+        //{
+        //    var tile =await _tileService.GetOne(x, y, z);
+        //    if (tile == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(tile);
+        //}
         [HttpPost]
         public async Task<ActionResult> Create([FromForm(Name = "files")] IFormFile imgs)
         {

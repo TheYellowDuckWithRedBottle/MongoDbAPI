@@ -39,6 +39,7 @@ namespace MongoDB
             //   // options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
 
             //});
+            //services.AddMvc();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1.1", new OpenApiInfo
@@ -111,8 +112,8 @@ namespace MongoDB
             {
                 app.UseDeveloperExceptionPage();
             }
-           
-           // app.UseHttpsRedirection();
+
+            // app.UseHttpsRedirection();
             app.Use(next => {
                 return async httpContext =>
                 {
@@ -134,6 +135,7 @@ namespace MongoDB
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
             app.UseMvc();
+            //app.UseEndpoints(endpoints => {endpoints.MapControllerRoute() });
         }
     }
 }

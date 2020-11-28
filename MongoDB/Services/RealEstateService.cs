@@ -53,7 +53,7 @@ namespace MongoDB.Services
         {       
             FilterDefinition<Building> filter;//查询表达式
             var filterBuilder = Builders<Building>.Filter;//查询构建器
-             filter = filterBuilder.Eq("NatbuildNo", query.NatbuildNo) & filterBuilder.Eq("RoomId",query.RoomId);
+             filter = filterBuilder.Eq("NatbuildNo", query.NatbuildNo) & filterBuilder.Eq("RoomId",query.RoomId)&filterBuilder.Eq("FloLayerId", query.FloLayer);
             var building = _Building.Find(filter).FirstOrDefault();
             return building;
         }

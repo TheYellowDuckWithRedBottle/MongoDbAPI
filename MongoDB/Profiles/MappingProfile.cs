@@ -17,7 +17,8 @@ namespace MongoDB.Profiles
             CreateMap<Building, BuildingResource>();
             CreateMap<BuildingResource, Building>();
             CreateMap<Building, BuildingAddResource>();
-            CreateMap<BuildingAddResource, Building>();
+            //CreateMap<Building, ReturnStatusModel>().ForMember(d=>d.RoomId,opt=>opt.MapFrom(s=>s.FloLayerId.IndexOf(s.CoverType)==1?s.)
+            //    .ForMember(d=>d.Status,opt=>opt.MapFrom(s=>s.CoverType));
             
         }
     }

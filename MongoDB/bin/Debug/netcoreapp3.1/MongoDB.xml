@@ -106,6 +106,15 @@
             <param name="z"></param>
             <returns></returns>
         </member>
+        <member name="M:MongoDB.Controllers.TileController.Create(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            异步获得二进制
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <returns></returns>
+        </member>
         <member name="P:MongoDB.Dto.UserDto.username">
             <summary>
             用户名

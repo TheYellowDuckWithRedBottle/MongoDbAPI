@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace MongoDB.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class B3dmController:ControllerBase
     {
@@ -30,12 +30,6 @@ namespace MongoDB.Controllers
         
         {
             MemoryStream destination = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\tileset.json");
-            //MemoryStream destination1 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0.b3dm");
-            //MemoryStream destination2 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0\\0.b3dm");
-            //MemoryStream destination3 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0\\0\\0.b3dm");
-            //MemoryStream destination4 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0\\0\\0\\0.b3dm");
-            //MemoryStream destination5 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0\\0\\0\\0\\0.b3dm");
-            //MemoryStream destination6 = await _b3dmService.downTileData("G:\\Map\\Tasks\\6月Task\\13\\13-2-1603\\output\\floor\\0\\0\\0\\0\\0\\0\\0.b3dm");
             if (destination!=null&& destination.Length>0)
             {
                 destination.Position = 0;

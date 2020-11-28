@@ -15,7 +15,7 @@ namespace MongoDB.Services
         {
             var client = new MongoClient("mongodb://localhost:27017");
 
-            var database = client.GetDatabase("png");
+            var database = client.GetDatabase("SuQianDB");
             _tiles = database.GetCollection<Tile>("layer");
         }
         public async Task<Tile> Create(Tile tile)
@@ -29,11 +29,22 @@ namespace MongoDB.Services
             return result.ToList();
         }
        
-        public async Task<IActionResult> Get(string x,string y,string z)
+        public  IActionResult Get(string x,string y,string z)
         {
-            var tile = await _tiles.FindAsync(tile => tile.x == x && tile.y == y && tile.z == z);
+            var tile =  _tiles.Find(tile => tile.x == x && tile.y == y && tile.z == z);
             List<Tile> listTile = tile.ToList();
             if(listTile.Count==0)
+            {
+                return null;
+            }
+            byte[] img1 = listTile[0].img;
+            return new FileContentResult(img1, "image/png");
+        }
+        public async Task<IActionResult> GetOne(string x, string y, string z)
+        {
+            var tile =await _tiles.FindAsync(tile => tile.x == x && tile.y == y && tile.z == z);
+            List<Tile> listTile = tile.ToList();
+            if (listTile.Count == 0)
             {
                 return null;
             }

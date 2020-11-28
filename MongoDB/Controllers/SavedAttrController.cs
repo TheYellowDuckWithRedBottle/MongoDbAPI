@@ -8,9 +8,9 @@ using System.Collections.Generic;
 
 namespace MongoDB.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    
+
     public class SavedAttrController : Controller
     {
         private readonly SavedBuildingAttService _savedBuildingAttService;

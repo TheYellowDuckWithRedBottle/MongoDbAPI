@@ -60,9 +60,11 @@ namespace MongoDB.Controllers
         [HttpGet]
         public ActionResult GetRealEstate([FromQuery] string NatbuildNo, [FromQuery]string RoomId)
         {
+            string LayerId="";
             if (RoomId.Contains('-'))
             {
                 var RoomIdArray = RoomId.Split('-');
+                LayerId = RoomIdArray[0];
                 if (RoomIdArray[1].ToString().Length == 2)
                 {
                     RoomId = RoomIdArray[0] + RoomIdArray[1];
@@ -72,13 +74,53 @@ namespace MongoDB.Controllers
                     RoomId = RoomIdArray[RoomIdArray.Length-1];
                 }
             }           
-            QueryParameter parameter = new QueryParameter { NatbuildNo = NatbuildNo, RoomId = RoomId };
+            QueryParameter parameter = new QueryParameter { NatbuildNo = NatbuildNo,FloLayer= LayerId, RoomId = RoomId };
             var Building = _RealEstateService.GetOneRealEstate(parameter);
             if (Building == null)
                 return Ok(new BuildingResource());
             var BuildingRes = _mapper.Map<BuildingResource>(Building);
             
             return Ok(BuildingRes);
+        }
+
+        [HttpGet]
+        public ActionResult GetRealEstateStaus()
+        {
+           
+            var RealEstates = _RealEstateService.GetAll();
+            List<ReturnStatusModel> BuildingRes=new List<ReturnStatusModel>();
+         
+            if (RealEstates != null) {
+                foreach (var item in RealEstates)
+                {
+
+                    ReturnStatusModel returnStatusModel = new ReturnStatusModel();
+                    if (item.CoverType==null)
+                    {
+                        returnStatusModel.Status = "0";
+                    }
+                    else
+                    {
+                        returnStatusModel.Status =item.CoverType;
+                    }
+                    returnStatusModel.BuildingId = item.NatbuildNo;
+                    var index = item.RoomId.IndexOf(item.FloLayerId);
+                    if (index == 0)
+                    {
+                        returnStatusModel.RoomId = item.RoomId.Insert(item.FloLayerId.Length, "-");
+                    }
+                    else
+                    {
+                        returnStatusModel.RoomId = item.FloLayerId + '-' + item.RoomId;
+                    }
+                    BuildingRes.Add(returnStatusModel);
+                }
+                
+            }
+
+            var res = BuildingRes.GroupBy(x => x.Status).Select(x => new ListStatus { Status = x.Key, RoomId = x.ToList() }).ToList();
+            return Ok(res);
+            
         }
         /// <summary>
         /// 获取保留属性的不动产信息
