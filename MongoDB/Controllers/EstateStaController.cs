@@ -115,7 +115,7 @@ namespace MongoDB.Controllers
                 return BadRequest();
             }
             var building = _mapper.Map<Building>(buildingAdd);
-           var buildingReturn= _estateStaService.Create(building);
+            var buildingReturn= _estateStaService.Create(building);
             var router= CreatedAtRoute("GetBuilding",new { HouseholdID = building.HouseholdID.ToString() }, buildingReturn);
             return router;
         }
