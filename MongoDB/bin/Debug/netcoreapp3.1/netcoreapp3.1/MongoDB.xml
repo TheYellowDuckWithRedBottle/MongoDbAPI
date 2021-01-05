@@ -55,6 +55,51 @@
              获取属性在IL中的Get方法名。
             
         </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getXZQ">
+            <summary>
+            获取行政区地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getQSXZCode">
+            <summary>
+            获取权属性质代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getStaticByQSXZ">
+            <summary>
+            根据权属性质查询总的面积
+            </summary>
+            <returns>整个地区的权属性质的总面积</returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getStaticByLocation">
+            <summary>
+            获取整个区域的分类统计数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getStaticDataByQSXZ(System.String)">
+            <summary>
+            根据权属代码获取图斑分类
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getStaticFromLoaction(System.String)">
+            <summary>
+            根据村庄名获取分类数据
+            </summary>
+            <param name="village"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Controllers.LandSpaceController.getLocationByBSM(System.String)">
+            <summary>
+            根据标识码,获取图斑位置
+            </summary>
+            <param name="BSM"></param>
+            <returns></returns>
+        </member>
         <member name="M:MongoDB.Controllers.LoginController.ValiToken(System.String)">
             <summary>
             验证Token

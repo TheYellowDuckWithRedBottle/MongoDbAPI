@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MongoDB.Common;
 using MongoDB.Extension;
 using MongoDB.Filter;
 using MongoDB.JWT;
@@ -19,6 +20,7 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.IO;
 using System.Reflection;
+using UrlHelper = Microsoft.AspNetCore.Mvc.Routing.UrlHelper;
 
 namespace MongoDB
 {
@@ -40,6 +42,7 @@ namespace MongoDB
 
             //});
             //services.AddMvc();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1.1", new OpenApiInfo
@@ -61,6 +64,7 @@ namespace MongoDB
             services.AddTransient<ITokenHelper, TokenHelper>();
             //读取配置文件配置的jwt相关配置
             services.Configure<JWTConfig>(Configuration.GetSection("JWTConfig"));
+            services.Configure<MongoConfig>(Configuration.GetSection("DatabaseSettings"));
             //启用JWT
             services.AddAuthentication(Options =>
             {
@@ -88,6 +92,8 @@ namespace MongoDB
             services.AddSingleton<B3dmService>();
             services.AddSingleton<EstateStaService>();
             services.AddSingleton<RealEstateService>();
+            services.AddSingleton<LandSpaceService>();
+            services.AddSingleton<EquityService>();
             services.AddAutoMapper();
             services.AddCors(options =>
             {

@@ -71,9 +71,9 @@ G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\System.Ide
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csprojAssemblyReference.cache
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\Aspose.Cells.dll
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csproj.CoreCompileInputs.cache
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.MvcApplicationPartsAssemblyInfo.cs
 G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.MvcApplicationPartsAssemblyInfo.cache
 G:\ArcEngineAPI\MongoDB\MongoDB\bin\Debug\netcoreapp3.1\netcoreapp3.1\License.lic
+G:\ArcEngineAPI\MongoDB\MongoDB\obj\Debug\netcoreapp3.1\MongoDB.csprojAssemblyReference.cache

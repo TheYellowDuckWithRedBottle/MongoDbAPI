@@ -73,7 +73,6 @@ namespace MongoDB.Models
         [JsonProperty("实测其他建筑面积(㎡)")]
         public string AreaRealOther { get; set; }
         [JsonProperty("取得方式")]
-
         public string MethodGet { get; set; }
         [JsonProperty("土地期限")]
         public string LandTenure { get; set; }

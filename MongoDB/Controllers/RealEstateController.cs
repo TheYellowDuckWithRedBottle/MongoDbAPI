@@ -39,10 +39,12 @@ namespace MongoDB.Controllers
         public ActionResult GetRealEstateByHouseId([FromQuery] string RealEstateNo)
         {
             QueryParameter parameter = new QueryParameter { HouseHoldeID= RealEstateNo };
-            var RealEstates = _RealEstateService.Get(RealEstateNo);
-            if(RealEstates!=null)
+            MappingService mappingService = new MappingService();
+           var mapping= mappingService.GetHouseHold(RealEstateNo);
+           
+            if(mapping != null)
             {
-                return Ok(RealEstates);
+                return Ok(mapping);
             }
             else
             {
@@ -82,6 +84,40 @@ namespace MongoDB.Controllers
             
             return Ok(BuildingRes);
         }
+        [HttpPost]
+        public ActionResult GetRoomIdsFromRealEstateNos([FromBody] ParamsModels RealEstateNos)
+        {
+            if (RealEstateNos.RealEstateNos.Length == 0)
+            {
+                return Ok(new ReturnModel() { Code = 404, Msg = "当前参数为空" });
+            }
+            List<Mapping> mappings = new List<Mapping>();
+            foreach (var item in RealEstateNos.RealEstateNos)
+            {
+                MappingService mappingService = new MappingService();
+                var mapping = mappingService.GetHouseHold(item);
+                mappings.Add(mapping);
+            }
+            if (mappings.Count == 0) return Ok(new ReturnModel() { Code = 404, Msg = "当前参数为空" });
+            else return Ok(mappings);
+        }
+        //[HttpPost]
+        //public ActionResult GetRoomIdsFromRealEstateNos([FromBody] string[] RealEstateNos)
+        //{
+        //    if (RealEstateNos.Length == 0)
+        //    {
+        //        return Ok(new ReturnModel() { Code=404,Msg="当前参数为空" });
+        //    }
+        //    List<Mapping> mappings = new List<Mapping>();
+        //    foreach (var item in RealEstateNos)
+        //    {
+        //        MappingService mappingService = new MappingService();
+        //        var mapping = mappingService.GetHouseHold(item);
+        //        mappings.Add(mapping);
+        //    }
+        //    if (mappings.Count == 0) return Ok(new ReturnModel() { Code = 404, Msg = "当前参数为空" });
+        //    else return Ok(mappings);
+        //}
 
         [HttpGet]
         public ActionResult GetRealEstateStaus()
