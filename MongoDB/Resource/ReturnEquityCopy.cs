@@ -10,11 +10,11 @@ namespace MongoDB.Resource
     {
         [JsonProperty("不动产单元号")]
         public string RealEstateNo { get; set; }
-       
-        [JsonProperty(PropertyName = "不动产证明号")]
-        public string TitleNo { get; set; }
+
+        [JsonProperty("预告证明号")]
+        public string ForestRealEstateNo { get; set; }
         [JsonProperty("预告权利人")]
-        public string Obligee { get; set; }
+        public string ForestPowerPerson { get; set; }
         [JsonProperty("坐落")]
         public string Location { get; set; }
         [JsonProperty("所在层")]

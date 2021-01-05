@@ -52,8 +52,11 @@ namespace MongoDB.Models
         public string Area        { get; set; }
         [JsonProperty("类型")]
         public string RegisterType1        { get; set; }
-        [JsonProperty("权利人1")]
-        public string PowerPerson        { get; set; }
+        [JsonProperty("预告证明号")]
+        public string ForestRealEstateNo { get; set; }
+
+        [JsonProperty("预告权利人 ")]
+        public string ForestPowerPerson        { get; set; }
         [JsonProperty("是否抵押")]
         public string IsMortgage        { get; set; }
         [JsonProperty("抵押方式")]
