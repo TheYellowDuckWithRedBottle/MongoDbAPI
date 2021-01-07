@@ -32,12 +32,12 @@ namespace MongoDB.Services
         public  IActionResult Get(string x,string y,string z)
         {
             var tile =  _tiles.Find(tile => tile.x == x && tile.y == y && tile.z == z);
-            List<Tile> listTile = tile.ToList();
-            if(listTile.Count==0)
+            Tile Tile = tile.FirstOrDefault();
+            if(Tile == null)
             {
                 return null;
             }
-            byte[] img1 = listTile[0].img;
+            byte[] img1 = Tile.img;
             return new FileContentResult(img1, "image/png");
         }
         public async Task<IActionResult> GetOne(string x, string y, string z)
