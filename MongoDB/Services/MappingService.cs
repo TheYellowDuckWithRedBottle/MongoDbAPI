@@ -15,14 +15,14 @@ namespace MongoDB.Services
 
             var client = new MongoClient("mongodb://localhost:27017");
             var database = client.GetDatabase("SuQianDB");
-            _Mapping = database.GetCollection<Mapping>("maping");
+            _Mapping = database.GetCollection<Mapping>("mapping");
         }
         public List<Mapping> GetAll() =>
            _Mapping.Find(Mapping => true).ToList();
         public Mapping GetHouseHold(string EstateNo)
         {
             var filterBuilder = Builders<Mapping>.Filter;
-            FilterDefinition<Mapping> filter = filterBuilder.Eq("RealEstateUnitNo", EstateNo);
+            FilterDefinition<Mapping> filter = filterBuilder.Eq("RealEstateNo", EstateNo);
             var mapping = _Mapping.Find(filter).FirstOrDefault();
             return mapping;
         }

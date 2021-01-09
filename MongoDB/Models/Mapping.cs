@@ -10,7 +10,7 @@ namespace MongoDB.Models
     public class Mapping
     {
         public string RoomId { get; set; }
-        public string NatbuildNo { get; set; }
-        public string RealEstateUnitNo { get; set; }
+        public string BuildingNo { get; set; }
+        public string RealEstateNo { get; set; }
     }
 }
